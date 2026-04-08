@@ -1,0 +1,126 @@
+/* Container Layout */
+.contact-wrapper {
+    padding: 0 10px;
+}
+
+.contact-header {
+    text-align: left;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Left Info Cards Styling */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-glass-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-icon-box {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-icon-box svg {
+    width: 26px;
+    height: 26px;
+}
+
+.info-details h4 {
+    margin: 0;
+    color: var(--text-gray);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.info-details p {
+    margin: 4px 0 0 0;
+    color: var(--text-white);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Right Form Styling */
+.contact-form-card {
+    padding: 40px;
+    border-radius: 24px;
+}
+
+.vlm-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.vlm-input-group label {
+    display: block;
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.vlm-select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.vlm-select option {
+    background: var(--bg-dark);
+    color: #fff;
+}
+
+.vlm-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    resize: none;
+    padding-top: 5px;
+}
+
+.w-full-btn {
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .vlm-form-row {
+        grid-template-columns: 1fr;
+    }
+}

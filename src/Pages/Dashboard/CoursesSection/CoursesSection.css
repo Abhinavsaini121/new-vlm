@@ -1,0 +1,155 @@
+:root {
+  --bg-dark: #070b19;
+  --cyan-neon: #00E5FF;
+  --cyan-glow: rgba(0, 229, 255, 0.3);
+  --purple-neon: #a855f7;
+  --gold-main: #D4AF37;
+  --text-white: #ffffff;
+  --text-gray: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* The outer container defines the total scroll "length" */
+.courses-section-wrapper {
+  position: relative;
+  height: 400vh; /* Adjust this to make scroll faster/slower */
+  /* background-color: var(--bg-dark); */
+  width: 100%;
+}
+
+/* This container stays fixed in the viewport */
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.courses-header {
+  padding: 0 5%;
+  margin-bottom: 20px;
+}
+
+.courses-header h2 {
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-white);
+}
+
+.courses-header p {
+  color: var(--text-gray);
+}
+
+/* The moving track */
+.horizontal-scroll-track {
+  display: flex;
+  padding: 0 5%;
+  gap: 30px;
+  will-change: transform;
+   overflow-x: auto;
+  transition: transform 0.1s ease-out; /* Smooths the movement */
+}
+.horizontal-scroll-track::-webkit-scrollbar {
+  display: none;
+}
+/* Fixed card width for horizontal flow */
+.course-card {
+  min-width: 350px; 
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--cyan-neon);
+  box-shadow: 0 10px 30px -10px var(--cyan-glow);
+}
+
+.card-image-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--text-white);
+}
+
+.course-author {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-main);
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.original-price {
+  font-size: 14px;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+.badge-row {
+  margin-top: 15px;
+}
+
+.course-badge {
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge-bestseller { background: var(--cyan-neon); color: #000; }
+.badge-new { background: var(--purple-neon); color: #fff; }
+

@@ -1,0 +1,130 @@
+.teachers-section {
+    padding: 20px 0;
+}
+
+.teachers-header {
+    margin-bottom: 30px;
+}
+
+/* Horizontal Scroll Container */
+.teachers-scroll-container {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 20px 10px 40px 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.teachers-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.teacher-card-item {
+    flex: 0 0 auto; /* Prevents shrinking */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.teacher-card-item:hover {
+    transform: translateY(-10px);
+}
+
+/* The Professional Circular Frame */
+.teacher-circle-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 6px; /* Gap for the orbit effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.teacher-img-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Orbiting Ring Animation on Hover */
+.inner-orbit {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed transparent;
+    transition: all 0.4s ease;
+}
+
+.teacher-card-item:hover .inner-orbit {
+    animation: spin 8s linear infinite;
+}
+
+/* Specific Neon Glows based on Teacher Color */
+.glow-cyan:hover {
+    box-shadow: 0 0 30px var(--cyan-glow);
+    border-color: var(--cyan-neon);
+}
+.glow-cyan .inner-orbit { border-color: var(--cyan-glow); }
+
+.glow-purple:hover {
+    box-shadow: 0 0 30px var(--purple-glow);
+    border-color: var(--purple-neon);
+}
+.glow-purple .inner-orbit { border-color: var(--purple-glow); }
+
+.glow-gold:hover {
+    box-shadow: 0 0 30px var(--gold-glow);
+    border-color: var(--gold-main);
+}
+.glow-gold .inner-orbit { border-color: var(--gold-glow); }
+
+.glow-blue:hover {
+    box-shadow: 0 0 30px var(--blue-glow);
+    border-color: var(--blue-bright);
+}
+.glow-blue .inner-orbit { border-color: var(--blue-glow); }
+
+/* Typography */
+.t-name {
+    margin: 0;
+    color: var(--text-white);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.t-subject {
+    margin: 4px 0;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.t-rating {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 10px;
+    border-radius: 20px;
+    color: var(--gold-main);
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.t-rating .star {
+    margin-right: 4px;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
